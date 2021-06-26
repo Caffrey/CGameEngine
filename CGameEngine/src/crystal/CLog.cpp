@@ -1,3 +1,5 @@
+#include "cpch.h"
+
 #include "CLog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 

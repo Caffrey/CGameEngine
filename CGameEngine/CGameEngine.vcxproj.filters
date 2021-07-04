@@ -10,11 +10,17 @@
     <Filter Include="src\crystal\event">
       <UniqueIdentifier>{AFFAD077-1B11-CF0D-6488-5A2FD0DD9F95}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\crystal\imgui">
+      <UniqueIdentifier>{A8761478-148D-120E-5D04-9E2FC959E395}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\crystal\layer">
       <UniqueIdentifier>{2A764478-968C-420E-DF03-CE2F4B591396}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\platform">
       <UniqueIdentifier>{41663D6D-2DC9-CC11-D64E-05C8C2909894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\platform\opengl">
+      <UniqueIdentifier>{B57427EB-21D6-04F9-AA43-4BAB16A43BB8}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\platform\windows">
       <UniqueIdentifier>{9B5931A8-87E8-BA71-3007-CF6C1C75CB17}</UniqueIdentifier>
@@ -60,11 +66,17 @@
     <ClInclude Include="src\crystal\event\MouseEvent.h">
       <Filter>src\crystal\event</Filter>
     </ClInclude>
+    <ClInclude Include="src\crystal\imgui\ImguiLayer.h">
+      <Filter>src\crystal\imgui</Filter>
+    </ClInclude>
     <ClInclude Include="src\crystal\layer\Layer.h">
       <Filter>src\crystal\layer</Filter>
     </ClInclude>
     <ClInclude Include="src\crystal\layer\LayerStack.h">
       <Filter>src\crystal\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\opengl\ImguiOpenGLRenderer.h">
+      <Filter>src\platform\opengl</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\windows\WindowsWindow.h">
       <Filter>src\platform\windows</Filter>
@@ -80,11 +92,17 @@
     <ClCompile Include="src\crystal\CLog.cpp">
       <Filter>src\crystal</Filter>
     </ClCompile>
+    <ClCompile Include="src\crystal\imgui\ImguiLayer.cpp">
+      <Filter>src\crystal\imgui</Filter>
+    </ClCompile>
     <ClCompile Include="src\crystal\layer\Layer.cpp">
       <Filter>src\crystal\layer</Filter>
     </ClCompile>
     <ClCompile Include="src\crystal\layer\LayerStack.cpp">
       <Filter>src\crystal\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\opengl\ImguiOpenGLRenderer.cpp">
+      <Filter>src\platform\opengl</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\windows\WindowsWindow.cpp">
       <Filter>src\platform\windows</Filter>

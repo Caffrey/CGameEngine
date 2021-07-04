@@ -77,7 +77,7 @@
       <PrecompiledHeaderFile>cpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CL_PLATFORM_WINDOWS;CRYSTAL_BUILD_DLL;CL_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;CG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -100,7 +100,7 @@
       <PrecompiledHeaderFile>cpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CL_PLATFORM_WINDOWS;CRYSTAL_BUILD_DLL;CL_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;CG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -123,7 +123,7 @@
       <PrecompiledHeaderFile>cpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CL_PLATFORM_WINDOWS;CRYSTAL_BUILD_DLL;CL_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;CG_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -152,8 +152,10 @@
     <ClInclude Include="src\crystal\event\Event.h" />
     <ClInclude Include="src\crystal\event\KeyEvent.h" />
     <ClInclude Include="src\crystal\event\MouseEvent.h" />
+    <ClInclude Include="src\crystal\imgui\ImguiLayer.h" />
     <ClInclude Include="src\crystal\layer\Layer.h" />
     <ClInclude Include="src\crystal\layer\LayerStack.h" />
+    <ClInclude Include="src\platform\opengl\ImguiOpenGLRenderer.h" />
     <ClInclude Include="src\platform\windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
@@ -162,8 +164,10 @@
     </ClCompile>
     <ClCompile Include="src\crystal\Application.cpp" />
     <ClCompile Include="src\crystal\CLog.cpp" />
+    <ClCompile Include="src\crystal\imgui\ImguiLayer.cpp" />
     <ClCompile Include="src\crystal\layer\Layer.cpp" />
     <ClCompile Include="src\crystal\layer\LayerStack.cpp" />
+    <ClCompile Include="src\platform\opengl\ImguiOpenGLRenderer.cpp" />
     <ClCompile Include="src\platform\windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +176,9 @@
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\Imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
     <ProjectReference Include="vendor\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>

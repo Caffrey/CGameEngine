@@ -7,9 +7,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 InlcudeDir = {}
 InlcudeDir["Glad"]="CGameEngine/vendor/GLFW/include"
 InlcudeDir["GLAD"]="CGameEngine/vendor/Glad/include"
+InlcudeDir["Imgui"]="CGameEngine/vendor/imgui"
 
 include "CGameEngine/vendor/GLFW"
 include "CGameEngine/vendor/Glad"
+include "CGameEngine/vendor/Imgui"
 
 project "SandBox"
 	location "SandBox"
@@ -85,11 +87,13 @@ project "CGameEngine"
 		"CGameEngine/src",
 		"CGameEngine/vendor/GLFW/include",
 		"CGameEngine/vendor/Glad/include",
+		"CGameEngine/vendor/imgui",
 	}
 
 	links
 	{
 		"GLFW",
+		"ImGui",
 		"Glad",
 		"opengl32.lib"
 	}

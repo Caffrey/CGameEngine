@@ -5,7 +5,6 @@ class ExampleLayer : public Crystal::Layer
 public:
 	ExampleLayer() :Layer("Example")
 	{
-
 	}
 
 	void OnUpdate() override
@@ -30,6 +29,7 @@ public:
 	SandBox()
 	{
 		PushLayer(new ExampleLayer());
+		PushLayer(new Crystal::ImguiLayer());
 	}
 
 	~SandBox()

@@ -2,12 +2,10 @@
 
 #include "crystal/Application.h"
 #include "crystal/layer/Layer.h"
-
-//---Log System-----
 #include "crystal/CLog.h"
-//-------
+#include "crystal/imgui/ImguiLayer.h"
 
 
-//--Entry Point
+//--Entry Point Shoud be last include 
 #include "crystal/EntryPoint.h"
 //-----

@@ -11,9 +11,11 @@ namespace Crystal {
 
 #define BIND_EVENT(x) std::bind(&Application::x, this, std::placeholders::_1)
 
+	Application* Application::s_Instance = nullptr;
 
 	Application::Application()
 	{
+		s_Instance = this;	
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT(OnEvent));
 		m_IsRunning = true;

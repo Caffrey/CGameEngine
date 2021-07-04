@@ -4,6 +4,12 @@ workspace "CGameEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+InlcudeDir = {}
+InlcudeDir["Glad"]="CGameEngine/vendor/GLFW/include"
+InlcudeDir["GLAD"]="CGameEngine/vendor/Glad/include"
+
+include "CGameEngine/vendor/GLFW"
+include "CGameEngine/vendor/Glad"
 
 project "SandBox"
 	location "SandBox"
@@ -22,7 +28,7 @@ project "SandBox"
 	includedirs 
 	{
 		"CGameEngine/vendor/spdlog/include",
-		"CGameEngine/src"
+		"CGameEngine/src",
 	}
 
 	links
@@ -38,6 +44,7 @@ project "SandBox"
 		defines
 		{
 			"CL_PLATFORM_WINDOWS",
+			"CL_ENABLE_ASSERTS"
 		}
 
 
@@ -56,7 +63,7 @@ project "SandBox"
 
 project "CGameEngine"
 	location "CGameEngine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -68,13 +75,23 @@ project "CGameEngine"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/src/**.cpp",		
+		"%{prj.name}/vendor/spdlog/include",
 	}
 
 	includedirs
 	{
 		"CGameEngine/vendor/spdlog/include",
 		"CGameEngine/src",
+		"CGameEngine/vendor/GLFW/include",
+		"CGameEngine/vendor/Glad/include",
+	}
+
+	links
+	{
+		"GLFW",
+		"Glad",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -85,7 +102,9 @@ project "CGameEngine"
 		defines
 		{
 			"CL_PLATFORM_WINDOWS",
-			"CRYSTAL_BUILD_DLL"
+			"CRYSTAL_BUILD_DLL",
+			"CL_ENABLE_ASSERTS",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

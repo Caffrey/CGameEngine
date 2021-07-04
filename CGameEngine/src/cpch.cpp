@@ -14,5 +14,4 @@
 
 #ifdef CL_PLATFORM_WINDOWS
 	#include <Windows.h>
-
 #endif

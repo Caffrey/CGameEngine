@@ -1,48 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="crystal">
-      <UniqueIdentifier>{A7D23FDB-13B2-BE76-1CCA-494D882825D8}</UniqueIdentifier>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="crystal\event">
-      <UniqueIdentifier>{58859B00-C445-1737-8D80-60B4F9FF5B13}</UniqueIdentifier>
+    <Filter Include="src\crystal">
+      <UniqueIdentifier>{BED279E4-2A88-F2D9-B37C-ECB01F31E9DD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\crystal\event">
+      <UniqueIdentifier>{AFFAD077-1B11-CF0D-6488-5A2FD0DD9F95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\crystal\layer">
+      <UniqueIdentifier>{2A764478-968C-420E-DF03-CE2F4B591396}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\platform">
+      <UniqueIdentifier>{41663D6D-2DC9-CC11-D64E-05C8C2909894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\platform\windows">
+      <UniqueIdentifier>{9B5931A8-87E8-BA71-3007-CF6C1C75CB17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\spdlog">
+      <UniqueIdentifier>{8BBC5F22-F77C-DB58-C0B7-24D62C372035}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Crystal.h" />
-    <ClInclude Include="src\cpch.h" />
+    <ClInclude Include="src\Crystal.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cpch.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\crystal\Application.h">
-      <Filter>crystal</Filter>
+      <Filter>src\crystal</Filter>
     </ClInclude>
     <ClInclude Include="src\crystal\CLog.h">
-      <Filter>crystal</Filter>
+      <Filter>src\crystal</Filter>
     </ClInclude>
     <ClInclude Include="src\crystal\Core.h">
-      <Filter>crystal</Filter>
+      <Filter>src\crystal</Filter>
     </ClInclude>
     <ClInclude Include="src\crystal\EntryPoint.h">
-      <Filter>crystal</Filter>
+      <Filter>src\crystal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\crystal\Window.h">
+      <Filter>src\crystal</Filter>
     </ClInclude>
     <ClInclude Include="src\crystal\event\ApplicationEvent.h">
-      <Filter>crystal\event</Filter>
+      <Filter>src\crystal\event</Filter>
     </ClInclude>
     <ClInclude Include="src\crystal\event\Event.h">
-      <Filter>crystal\event</Filter>
+      <Filter>src\crystal\event</Filter>
     </ClInclude>
     <ClInclude Include="src\crystal\event\KeyEvent.h">
-      <Filter>crystal\event</Filter>
+      <Filter>src\crystal\event</Filter>
     </ClInclude>
-    <ClInclude Include="src\crystal\event\MouseEvent.h.h">
-      <Filter>crystal\event</Filter>
+    <ClInclude Include="src\crystal\event\MouseEvent.h">
+      <Filter>src\crystal\event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\crystal\layer\Layer.h">
+      <Filter>src\crystal\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\crystal\layer\LayerStack.h">
+      <Filter>src\crystal\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\windows\WindowsWindow.h">
+      <Filter>src\platform\windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\cpch.cpp" />
+    <ClCompile Include="src\cpch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="src\crystal\Application.cpp">
-      <Filter>crystal</Filter>
+      <Filter>src\crystal</Filter>
     </ClCompile>
     <ClCompile Include="src\crystal\CLog.cpp">
-      <Filter>crystal</Filter>
+      <Filter>src\crystal</Filter>
     </ClCompile>
+    <ClCompile Include="src\crystal\layer\Layer.cpp">
+      <Filter>src\crystal\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\crystal\layer\LayerStack.cpp">
+      <Filter>src\crystal\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\windows\WindowsWindow.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vendor\spdlog\include">
+      <Filter>vendor\spdlog</Filter>
+    </None>
   </ItemGroup>
 </Project>

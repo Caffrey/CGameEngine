@@ -13,4 +13,14 @@
 
 #endif
 
+#ifdef CL_ENABLE_ASSERTS
+	#define CL_ASSERT(x,...) {if(!(x)) {CORE_CLOG_ERROR("Asserts Failed :{0}",__VA_ARGS__); __debugbreak(); }}
+	#define CL_CORE_ASSERT(x,...) {if(!(x)) {CORE_CLOG_ERROR("Asserts Failed :{0}",__VA_ARGS__); __debugbreak(); }}
+
+#else
+	#define CL_ASSERT(x,...)
+	#define CL_CORE_ASSERT(x,...)
+
+#endif
+
 #define BIT(x) (1 << x)

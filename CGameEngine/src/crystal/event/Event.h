@@ -11,12 +11,12 @@ namespace Crystal
 	enum class KeyCode
 	{
 		A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, Y, Z,
-		SHIFT,CTRL,ALT,N1,N2,N3,N4,N5,N6,N7,N8,N9,N0
+		SHIFT, CTRL, ALT, N1, N2, N3, N4, N5, N6, N7, N8, N9, N0
 	};
 
 	enum class MouseCode
 	{
-		LMB,MMB,RMB
+		LMB, MMB, RMB
 	};
 
 
@@ -49,61 +49,62 @@ namespace Crystal
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
 
-class CRYSTAL_API Event
-{
-public:
-	virtual ~Event() = default;
-
-	bool Handle = false;
-
-	virtual EventType GetEventType() const = 0;
-	virtual const char* GetName() const = 0;
-	virtual int GetCategoryFlags() const = 0;
-	virtual std::string ToString() const { return GetName(); }
-
-	bool IsInCategory(EventCategory category)
+	class CRYSTAL_API Event
 	{
-		return GetCategoryFlags() & category;
-	}
-};
+	public:
+		virtual ~Event() = default;
 
-class CRYSTAL_API EventDispatcher
-{
+		bool Handle = false;
 
-	
-public:
-	EventDispatcher(Event& event)
-		: m_Event(event)
-	{
-	}
+		virtual EventType GetEventType() const = 0;
+		virtual const char* GetName() const = 0;
+		virtual int GetCategoryFlags() const = 0;
+		virtual std::string ToString() const { return GetName(); }
 
-	template<typename T, typename F>
-	bool Dispatch(const F& func)
-	{
-		if (m_Event.GetEventType() == T::GetStaticType())
+		bool IsInCategory(EventCategory category)
 		{
-			m_Event.Handle |= func(static_cast<T&>(m_Event))
-				return true;
+			return GetCategoryFlags() & category;
 		}
-		return false;
+	};
+
+	class CRYSTAL_API EventDispatcher
+	{
+
+
+	public:
+		EventDispatcher(Event& event)
+			: m_Event(event)
+		{
+		}
+
+		template<typename T, typename F>
+		bool Dispatch(const F& func)
+		{
+			if (m_Event.GetEventType() == T::GetStaticType())
+			{
+				func(static_cast<T&>(m_Event));
+				m_Event.Handle = true;
+				return true;
+			}
+			return false;
+		}
+
+	private:
+		Event& m_Event;
+	};
+
+	inline std::ostream& operator<<(std::ostream& os, const Event& e)
+	{
+		return os << e.ToString();
 	}
-
-private:
-	Event& m_Event;
-};
-
-inline std::ostream& operator<<(std::ostream& os, const Event& e)
-{
-	return os << e.ToString();
-}
-inline std::ostream& operator<<(std::ostream& os, const KeyCode& e)
-{
-	return os << e;
-}
-inline std::ostream& operator<<(std::ostream& os, const MouseCode& e)
-{
-	return os << e;
-}
+	inline std::ostream& operator<<(std::ostream& os, const KeyCode& e)
+	{
+		return os << e;
+	}
+	inline std::ostream& operator<<(std::ostream& os, const MouseCode& e)
+	{
+		return os << e;
+	}
 
 
 

@@ -2,7 +2,6 @@
 #include "Core.h"
 #include "spdlog/spdlog.h"
 
-
 namespace Crystal
 {
 	class CRYSTAL_API CLog
@@ -24,3 +23,4 @@ namespace Crystal
 #define CORE_CLOG_INFO(...) ::Crystal::CLog::GetCoreLogger()->info(__VA_ARGS__);
 #define CORE_CLOG_WARN(...) ::Crystal::CLog::GetCoreLogger()->warn(__VA_ARGS__);
 #define CORE_CLOG_ERROR(...) ::Crystal::CLog::GetCoreLogger()->error(__VA_ARGS__);
+

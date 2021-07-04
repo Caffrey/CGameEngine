@@ -6,3 +6,6 @@
 	path = CGameEngine\\vendor\\GLFW
 	url = https://github.com/Caffrey/glfw.git
 	ignore = dirty
+[submodule "CGameEngine/vendor/imgui"]
+	path = CGameEngine/vendor/imgui
+	url = https://github.com/Caffrey/imgui.git

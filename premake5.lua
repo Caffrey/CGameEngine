@@ -8,6 +8,7 @@ InlcudeDir = {}
 InlcudeDir["Glad"]="CGameEngine/vendor/GLFW/include"
 InlcudeDir["GLAD"]="CGameEngine/vendor/Glad/include"
 InlcudeDir["Imgui"]="CGameEngine/vendor/imgui"
+InlcudeDir["Glm"]="CGameEngine/vendor/glm"
 
 include "CGameEngine/vendor/GLFW"
 include "CGameEngine/vendor/Glad"
@@ -30,6 +31,7 @@ project "SandBox"
 	includedirs 
 	{
 		"CGameEngine/vendor/spdlog/include",
+		"CGameEngine/vendor/glm",
 		"CGameEngine/src",
 	}
 
@@ -80,6 +82,9 @@ project "CGameEngine"
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",		
 		"%{prj.name}/vendor/spdlog/include",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
+
 	}
 
 	includedirs
@@ -88,6 +93,7 @@ project "CGameEngine"
 		"CGameEngine/src",
 		"CGameEngine/vendor/GLFW/include",
 		"CGameEngine/vendor/Glad/include",
+		"CGameEngine/vendor/glm",
 		"CGameEngine/vendor/imgui",
 	}
 

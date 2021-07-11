@@ -17,24 +17,13 @@ namespace Crystal
 		ImguiLayer();
 		~ImguiLayer();
 
-		void OnAttch();
-		void OnDetch();
-		void OnUpdate() override;
-		void OnEvent(Event& event) override;
-
-
-	private:
-		
-		bool OnMouseMovedEvent(MouseMovedEvent &e);
-		bool OnMouseScrolledEvent(MouseScrolledEvent& e);
-		bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
-		bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
-
-		bool OnKeyPressedEvent(KeyPressedEvent& e);
-		bool OnKeyReleasedEvent(KeyReleasedEvent& e);
-		bool OnKeyTypedEvent(KeyTypedEvent& e);
-
-		bool OnWindowResizeEvent(WindowResizeEvent& e);
+		virtual void OnAttch() override;
+		virtual void OnDetch()override;
+		virtual void OnUpdate() override;
+		virtual void OnEvent(Event& event) override;
+		virtual void ImguiRenderer()override;
+		void Begin();
+		void End();
 
 	private:
 		float m_time = 0;

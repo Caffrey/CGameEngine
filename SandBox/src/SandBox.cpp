@@ -5,7 +5,11 @@
 class ExampleLayer : public Crystal::Layer
 {
 public:
-	ExampleLayer() :Layer("Example Layer") {};
+	ExampleLayer() :Layer("Example Layer")
+	{
+	
+	
+	};
 	~ExampleLayer() {};
 
 	virtual void OnEvent(Crystal::Event& event) override
@@ -27,7 +31,6 @@ public:
 	SandBox()
 	{
 		PushLayer(new ExampleLayer());
-		PushLayer(new Crystal::ImguiLayer());
 	}
 
 	~SandBox()

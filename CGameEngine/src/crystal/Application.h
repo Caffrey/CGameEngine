@@ -5,7 +5,7 @@
 #include "crystal/Window.h"
 #include "crystal/event/ApplicationEvent.h"
 #include "crystal/layer/LayerStack.h"
-
+#include "crystal/imgui/ImguiLayer.h"
 
 namespace Crystal {
 
@@ -29,6 +29,8 @@ namespace Crystal {
 
 	private:
 		std::unique_ptr<Window> m_Window;
+		ImguiLayer* m_ImguiLayer;
+
 		bool m_IsRunning = false;
 
 		LayerStack m_LayerStack;

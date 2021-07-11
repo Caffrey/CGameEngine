@@ -17,13 +17,16 @@ namespace Crystal {
 		s_Instance = this;	
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(CL_BIND_EVENT(Application::OnEvent));
+
+		m_ImguiLayer = new ImguiLayer();
+		PushOverlayer(m_ImguiLayer);
+
 		m_IsRunning = true;
 
 	}
 
 	Application::~Application()
 	{
-
 	}
 
 	void Application::Run()
@@ -34,9 +37,12 @@ namespace Crystal {
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : m_LayerStack)
-			{
 				layer->OnUpdate();
-			}
+
+			m_ImguiLayer->Begin();
+			for (Layer* layer : m_LayerStack)
+				layer->ImguiRenderer();
+			m_ImguiLayer->End();
 
 			m_Window->OnUpdate();
 		}

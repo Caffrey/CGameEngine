@@ -9,3 +9,6 @@
 [submodule "CGameEngine/vendor/imgui"]
 	path = CGameEngine/vendor/imgui
 	url = https://github.com/Caffrey/imgui.git
+[submodule "CGameEngine/vendor/glm"]
+	path = CGameEngine/vendor/glm
+	url = https://github.com/g-truc/glm.git

@@ -16,6 +16,7 @@ namespace Crystal {
 		virtual void OnDetch() {}
 		virtual void OnUpdate() {}
 		virtual void OnEvent(Event& event) {}
+		virtual void ImguiRenderer() {}
 
 		inline const std::string& GetName() const { return m_DebugName; }
 

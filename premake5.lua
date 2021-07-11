@@ -46,7 +46,8 @@ project "SandBox"
 		defines
 		{
 			"CL_PLATFORM_WINDOWS",
-			"CL_ENABLE_ASSERTS"
+			"CL_ENABLE_ASSERTS",
+			"CRYSTAL_SYSTEM_API_CRYSTAL"
 		}
 
 
@@ -108,7 +109,8 @@ project "CGameEngine"
 			"CL_PLATFORM_WINDOWS",
 			"CRYSTAL_BUILD_DLL",
 			"CL_ENABLE_ASSERTS",
-			"GLFW_INCLUDE_NONE"
+			"GLFW_INCLUDE_NONE",
+			"CRYSTAL_SYSTEM_API_CRYSTAL"
 		}
 
 		postbuildcommands

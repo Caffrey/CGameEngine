@@ -16,6 +16,9 @@
     <Filter Include="src\crystal\layer">
       <UniqueIdentifier>{2A764478-968C-420E-DF03-CE2F4B591396}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\crystal\platform">
+      <UniqueIdentifier>{F2A066CB-DE2F-F094-874E-049073BC003B}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\platform">
       <UniqueIdentifier>{41663D6D-2DC9-CC11-D64E-05C8C2909894}</UniqueIdentifier>
     </Filter>
@@ -51,6 +54,9 @@
     <ClInclude Include="src\crystal\EntryPoint.h">
       <Filter>src\crystal</Filter>
     </ClInclude>
+    <ClInclude Include="src\crystal\Input.h">
+      <Filter>src\crystal</Filter>
+    </ClInclude>
     <ClInclude Include="src\crystal\Window.h">
       <Filter>src\crystal</Filter>
     </ClInclude>
@@ -75,8 +81,17 @@
     <ClInclude Include="src\crystal\layer\LayerStack.h">
       <Filter>src\crystal\layer</Filter>
     </ClInclude>
+    <ClInclude Include="src\crystal\platform\KeyCode.h">
+      <Filter>src\crystal\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\crystal\platform\MouseCode.h">
+      <Filter>src\crystal\platform</Filter>
+    </ClInclude>
     <ClInclude Include="src\platform\opengl\imgui_impl_opengl3.h">
       <Filter>src\platform\opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\windows\WindowsInput.h">
+      <Filter>src\platform\windows</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\windows\WindowsWindow.h">
       <Filter>src\platform\windows</Filter>
@@ -103,6 +118,9 @@
     </ClCompile>
     <ClCompile Include="src\platform\opengl\imgui_impl_opengl3.cpp">
       <Filter>src\platform\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\windows\WindowsInput.cpp">
+      <Filter>src\platform\windows</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\windows\WindowsWindow.cpp">
       <Filter>src\platform\windows</Filter>

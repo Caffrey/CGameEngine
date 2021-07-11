@@ -26,3 +26,16 @@
 #define BIT(x) (1 << x)
 
 #define CL_BIND_EVENT(x) std::bind(&x, this, std::placeholders::_1)
+
+//----------------------------Platform Spcitfy Marco
+
+#ifdef CRYSTAL_SYSTEM_API_CRYSTAL
+
+	#define CRYSTAL_INPUT_API_GLFW 1
+
+#else CRYSTAL_SYSTEM_API_WINDOWS
+
+	#define CRYSTAL_INPUT_API_WINDOWS 1
+#endif
+
+//----------------------------Platform Spcitfy Marco

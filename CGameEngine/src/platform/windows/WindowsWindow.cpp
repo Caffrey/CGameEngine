@@ -10,6 +10,8 @@
 #include "crystal/event/ApplicationEvent.h"
 #include "crystal/event/KeyEvent.h"
 #include "crystal/event/MouseEvent.h"
+#include "crystal/platform/KeyCode.h"
+#include "crystal/platform/MouseCode.h"
 
 namespace Crystal
 {
@@ -114,19 +116,19 @@ namespace Crystal
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 				switch (action)
 				{
-				case GLFW_PRESS:
+				case CL_KEY_PRESS:
 				{
 					KeyPressedEvent event(key, 0);
 					data.EventCallback(event);
 					break;
 				}
-				case GLFW_RELEASE:
+				case CL_KEY_RELEASE:
 				{
 					KeyReleasedEvent event(key, 0);
 					data.EventCallback(event);
 					break;
 				}
-				case GLFW_REPEAT:
+				case CL_KEY_REPEAT:
 				{
 					KeyPressedEvent event(key, 1);
 					data.EventCallback(event);
@@ -150,13 +152,13 @@ namespace Crystal
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 				switch (action)
 				{
-				case GLFW_PRESS:
+				case CL_MOUSE_PRESS:
 				{
 					MouseButtonPressedEvent event(button);
 					data.EventCallback(event);
 					break;
 				}
-				case GLFW_RELEASE:
+				case CL_MOUSE_RELEASE:
 				{
 					MouseButtonReleasedEvent event(button);
 					data.EventCallback(event);

@@ -8,20 +8,21 @@ namespace Crystal
 	class CRYSTAL_API KeyEvent : public Event
 	{
 	public:
-		KeyCode GetKeyCode() const { return m_KeyCode; }
+		int GetKeyCode() const { return m_KeyCode; }
+		int GetKey() const { return (int)m_KeyCode; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 	protected:
-		KeyEvent(const KeyCode keycode)
+		KeyEvent(const int keycode)
 			: m_KeyCode(keycode) {}
 
-		KeyCode m_KeyCode;
+		int m_KeyCode;
 	};
 
 	class CRYSTAL_API KeyPressedEvent : public KeyEvent
 	{
 	public:
-		KeyPressedEvent(const KeyCode keycode, const uint16_t repeatCount)
+		KeyPressedEvent(const int keycode, const uint16_t repeatCount)
 			: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
 		uint16_t GetRepeatCount() const { return m_RepeatCount; }
@@ -41,7 +42,7 @@ namespace Crystal
 	class CRYSTAL_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
-		KeyReleasedEvent(const KeyCode keycode)
+		KeyReleasedEvent(const int keycode,int a)
 			: KeyEvent(keycode) {}
 
 		std::string ToString() const override
@@ -57,7 +58,7 @@ namespace Crystal
 	class CRYSTAL_API KeyTypedEvent : public KeyEvent
 	{
 	public:
-		KeyTypedEvent(const KeyCode keycode)
+		KeyTypedEvent(const int keycode)
 			: KeyEvent(keycode) {}
 
 		std::string ToString() const override
@@ -69,6 +70,8 @@ namespace Crystal
 
 		EVENT_CLASS_TYPE(KeyTyped)
 	};
+
+
 
 
 

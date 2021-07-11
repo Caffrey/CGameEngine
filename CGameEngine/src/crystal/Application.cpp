@@ -9,7 +9,6 @@
 
 namespace Crystal {
 
-#define BIND_EVENT(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 	Application* Application::s_Instance = nullptr;
 
@@ -17,7 +16,7 @@ namespace Crystal {
 	{
 		s_Instance = this;	
 		m_Window = std::unique_ptr<Window>(Window::Create());
-		m_Window->SetEventCallback(BIND_EVENT(OnEvent));
+		m_Window->SetEventCallback(CL_BIND_EVENT(Application::OnEvent));
 		m_IsRunning = true;
 
 	}
@@ -47,7 +46,7 @@ namespace Crystal {
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT(OnWindowClose));
+		dispatcher.Dispatch<WindowCloseEvent>(CL_BIND_EVENT(Application::OnWindowClose));
 
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
 		{
@@ -58,9 +57,10 @@ namespace Crystal {
 
 	}
 
-	void Application::OnWindowClose(WindowCloseEvent& e)
+	bool Application::OnWindowClose(WindowCloseEvent& e)
 	{
 		m_IsRunning = false;
+		return true;
 	}
 
 	void Application::PushLayer(Layer* layer)

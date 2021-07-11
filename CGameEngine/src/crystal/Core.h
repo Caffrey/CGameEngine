@@ -24,3 +24,5 @@
 #endif
 
 #define BIT(x) (1 << x)
+
+#define CL_BIND_EVENT(x) std::bind(&x, this, std::placeholders::_1)

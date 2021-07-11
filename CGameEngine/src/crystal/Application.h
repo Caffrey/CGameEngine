@@ -19,7 +19,7 @@ namespace Crystal {
 		virtual void Run();
 
 		void OnEvent(Event& e);
-		void OnWindowClose(WindowCloseEvent& e);
+		bool OnWindowClose(WindowCloseEvent& e);
 
 		void PushLayer(Layer* layer);
 		void PushOverlayer(Layer* layer);

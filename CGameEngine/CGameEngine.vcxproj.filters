@@ -75,7 +75,7 @@
     <ClInclude Include="src\crystal\layer\LayerStack.h">
       <Filter>src\crystal\layer</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\opengl\ImguiOpenGLRenderer.h">
+    <ClInclude Include="src\platform\opengl\imgui_impl_opengl3.h">
       <Filter>src\platform\opengl</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\windows\WindowsWindow.h">
@@ -101,7 +101,7 @@
     <ClCompile Include="src\crystal\layer\LayerStack.cpp">
       <Filter>src\crystal\layer</Filter>
     </ClCompile>
-    <ClCompile Include="src\platform\opengl\ImguiOpenGLRenderer.cpp">
+    <ClCompile Include="src\platform\opengl\imgui_impl_opengl3.cpp">
       <Filter>src\platform\opengl</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\windows\WindowsWindow.cpp">

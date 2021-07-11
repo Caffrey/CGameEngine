@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Event.h"
+#include <sstream>
 
 namespace Crystal
 {
@@ -51,20 +52,21 @@ namespace Crystal
 	class CRYSTAL_API MouseButtonEvent : public Event
 	{
 	public:
-		MouseCode GetMouseButton() const { return m_Button; }
+		int GetMouseButtonCode() const { return m_Button; }
+		int GetMouseButton() const {return (int)m_Button;}
 
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput | EventCategoryMouseButton)
 	protected:
-		MouseButtonEvent(const MouseCode button)
+		MouseButtonEvent(const int button)
 			: m_Button(button) {}
 
-		MouseCode m_Button;
+		int m_Button;
 	};
 
 	class CRYSTAL_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonPressedEvent(const MouseCode button)
+		MouseButtonPressedEvent(const int button)
 			: MouseButtonEvent(button) {}
 
 		std::string ToString() const override
@@ -80,7 +82,7 @@ namespace Crystal
 	class CRYSTAL_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonReleasedEvent(const MouseCode button)
+		MouseButtonReleasedEvent(const int button)
 			: MouseButtonEvent(button) {}
 
 		std::string ToString() const override

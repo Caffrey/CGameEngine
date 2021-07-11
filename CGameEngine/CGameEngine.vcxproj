@@ -155,7 +155,7 @@
     <ClInclude Include="src\crystal\imgui\ImguiLayer.h" />
     <ClInclude Include="src\crystal\layer\Layer.h" />
     <ClInclude Include="src\crystal\layer\LayerStack.h" />
-    <ClInclude Include="src\platform\opengl\ImguiOpenGLRenderer.h" />
+    <ClInclude Include="src\platform\opengl\imgui_impl_opengl3.h" />
     <ClInclude Include="src\platform\windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
@@ -167,7 +167,7 @@
     <ClCompile Include="src\crystal\imgui\ImguiLayer.cpp" />
     <ClCompile Include="src\crystal\layer\Layer.cpp" />
     <ClCompile Include="src\crystal\layer\LayerStack.cpp" />
-    <ClCompile Include="src\platform\opengl\ImguiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\platform\opengl\imgui_impl_opengl3.cpp" />
     <ClCompile Include="src\platform\windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -16,9 +16,4 @@
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="vendor\spdlog\include">
-      <Filter>vendor\spdlog</Filter>
-    </None>
-  </ItemGroup>
 </Project>

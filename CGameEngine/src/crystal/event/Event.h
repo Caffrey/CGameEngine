@@ -1,9 +1,7 @@
 #pragma once
 
 #include "cpch.h"
-
 #include "spdlog/fmt/ostr.h"
-
 #include "crystal/Core.h"
 
 namespace Crystal
@@ -16,7 +14,7 @@ namespace Crystal
 
 	enum class MouseCode
 	{
-		LMB, MMB, RMB
+		LMB=0, MMB=2, RMB=1
 	};
 
 
@@ -82,8 +80,7 @@ namespace Crystal
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				func(static_cast<T&>(m_Event));
-				m_Event.Handle = true;
+				m_Event.Handle |= func(static_cast<T&>(m_Event));;
 				return true;
 			}
 			return false;

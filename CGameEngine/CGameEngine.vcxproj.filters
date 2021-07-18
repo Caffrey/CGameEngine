@@ -1353,6 +1353,12 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\crystal\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\platform\opengl\OpenGLContext.h" />
+    <ClInclude Include="src\crystal\Renderer\Shader.h" />
+    <ClInclude Include="src\crystal\Renderer\Buffer.h" />
+    <ClInclude Include="src\platform\opengl\OpenGLBuffer.h" />
+    <ClInclude Include="src\crystal\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cpch.cpp">
@@ -1382,6 +1388,11 @@
     <ClCompile Include="src\platform\windows\WindowsWindow.cpp">
       <Filter>src\platform\windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\opengl\OpenGLContext.cpp" />
+    <ClCompile Include="src\crystal\Renderer\Shader.cpp" />
+    <ClCompile Include="src\platform\opengl\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\crystal\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\crystal\Renderer\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\spdlog\include">

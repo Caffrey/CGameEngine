@@ -148,6 +148,10 @@
     <ClInclude Include="src\crystal\Core.h" />
     <ClInclude Include="src\crystal\EntryPoint.h" />
     <ClInclude Include="src\crystal\Input.h" />
+    <ClInclude Include="src\crystal\Renderer\Buffer.h" />
+    <ClInclude Include="src\crystal\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\crystal\Renderer\Renderer.h" />
+    <ClInclude Include="src\crystal\Renderer\Shader.h" />
     <ClInclude Include="src\crystal\Window.h" />
     <ClInclude Include="src\crystal\event\ApplicationEvent.h" />
     <ClInclude Include="src\crystal\event\Event.h" />
@@ -158,6 +162,8 @@
     <ClInclude Include="src\crystal\layer\LayerStack.h" />
     <ClInclude Include="src\crystal\platform\KeyCode.h" />
     <ClInclude Include="src\crystal\platform\MouseCode.h" />
+    <ClInclude Include="src\platform\opengl\OpenGLBuffer.h" />
+    <ClInclude Include="src\platform\opengl\OpenGLContext.h" />
     <ClInclude Include="src\platform\windows\WindowsInput.h" />
     <ClInclude Include="src\platform\windows\WindowsWindow.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -586,6 +592,11 @@
     <ClCompile Include="src\crystal\imgui\ImguiLayer.cpp" />
     <ClCompile Include="src\crystal\layer\Layer.cpp" />
     <ClCompile Include="src\crystal\layer\LayerStack.cpp" />
+    <ClCompile Include="src\crystal\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\crystal\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\crystal\Renderer\Shader.cpp" />
+    <ClCompile Include="src\platform\opengl\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\platform\opengl\OpenGLContext.cpp" />
     <ClCompile Include="src\platform\windows\WindowsInput.cpp" />
     <ClCompile Include="src\platform\windows\WindowsWindow.cpp" />
   </ItemGroup>

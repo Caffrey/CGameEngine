@@ -2,7 +2,9 @@
 
 #include "crystal/Window.h"
 
+#include "crystal/Renderer/GraphicsContext.h"
 struct GLFWwindow;
+
 
 namespace Crystal
 {
@@ -33,6 +35,7 @@ namespace Crystal
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{

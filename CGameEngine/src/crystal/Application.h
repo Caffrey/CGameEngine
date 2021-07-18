@@ -6,6 +6,8 @@
 #include "crystal/event/ApplicationEvent.h"
 #include "crystal/layer/LayerStack.h"
 #include "crystal/imgui/ImguiLayer.h"
+#include "crystal/Renderer/Shader.h"
+#include "crystal/Renderer/Buffer.h"
 
 namespace Crystal {
 
@@ -36,6 +38,11 @@ namespace Crystal {
 		LayerStack m_LayerStack;
 
 		static Application* s_Instance;
+
+		unsigned int m_vertexArray;
+		std::unique_ptr<Shader> m_Shader;
+		std::unique_ptr<VertexBuffer> m_VertexBuffer;
+		std::unique_ptr<IndexBuffer> m_IndexBuffer;
 
 	};
 

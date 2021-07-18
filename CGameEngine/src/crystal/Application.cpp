@@ -4,6 +4,8 @@
 #include "crystal/event/ApplicationEvent.h"
 #include "crystal/CLog.h"
 
+#include "crystal/Renderer/Buffer.h"
+
 #include <glad/glad.h>
 
 
@@ -23,6 +25,60 @@ namespace Crystal {
 
 		m_IsRunning = true;
 
+		//vertex array
+		glGenVertexArrays(1, &m_vertexArray);
+		glBindVertexArray(m_vertexArray);
+
+
+		float vetrics[9] = {
+			-.5f , -.5f , .0f,
+			.5f , -.5f , .0f,
+			.0f,.5f,.0f,
+		};
+
+
+		m_VertexBuffer.reset(VertexBuffer::Create(vetrics,sizeof(vetrics)));
+		
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float),nullptr);
+
+
+		unsigned int indices[3] = { 0,1,2 };
+		m_IndexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices)));
+		
+		std::string vertexSource = R"(
+			#version 330 core
+			layout(location = 0) in vec3 a_Position;
+			out vec3 v_Position;
+			void main()
+			{
+				v_Position = a_Position;
+				gl_Position = vec4(a_Position.xyz,1);
+			}
+		)";
+
+		std::string pixelSource= R"(
+			#version 330 core
+			layout(location = 0) out vec4 color;
+			in vec3 v_Position;			
+			void main()
+			{
+				color = vec4(v_Position.xyz, 1);
+			}
+		)";
+
+
+		m_Shader.reset(new Shader(vertexSource,pixelSource));
+
+
+
+
+
+		//vertex buffer
+		//index buffer
+		//shader
+
 	}
 
 	Application::~Application()
@@ -33,8 +89,12 @@ namespace Crystal {
 	{
 		while (m_IsRunning)
 		{
-			glClearColor(0, 1, 0, 1);
+			glClearColor(0.3, .3, 0.3, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			m_VertexBuffer->Bind();
+			glBindVertexArray(m_vertexArray);
+			glDrawElements(GL_TRIANGLES, m_IndexBuffer->Count(), GL_UNSIGNED_INT, nullptr); 
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();

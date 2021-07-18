@@ -13,6 +13,8 @@
 #include "crystal/platform/KeyCode.h"
 #include "crystal/platform/MouseCode.h"
 
+#include "platform/opengl/OpenGLContext.h"
+
 namespace Crystal
 {
 	static bool s_GLFWInitialized = false;
@@ -40,7 +42,7 @@ namespace Crystal
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();		
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffer();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
@@ -63,6 +65,8 @@ namespace Crystal
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
 
+	
+
 		// CORE_CLOG_INFO("Cretea Window {0} ({1}, {2}, ", props.Title, props.Width, props.Height);
 
 		if (!s_GLFWInitialized)
@@ -73,12 +77,12 @@ namespace Crystal
 			s_GLFWInitialized = true;
 		}
 
-		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(),
-			nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
+		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		CL_CORE_ASSERT(status, "Failed to init  glad!");
+		
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
+		
 
 
 		glfwSetWindowUserPointer(m_Window, &m_Data);

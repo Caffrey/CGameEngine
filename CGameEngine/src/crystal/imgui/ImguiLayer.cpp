@@ -82,6 +82,8 @@ namespace Crystal
 	{
 		static bool show = true;
 		ImGui::ShowDemoWindow(&show);
+
+		ImGui::Text("Fuck You %d", 123);
 	}
 
 	void ImguiLayer::Begin()

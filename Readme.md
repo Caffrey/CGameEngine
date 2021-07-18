@@ -1,6 +1,6 @@
 
 Feature List:
 
-Content Broswer
-Renderer
-File System
+Content Broswer \n
+Renderer\n
+File System\n
